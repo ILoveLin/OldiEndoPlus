@@ -1,0 +1,6 @@
+include ':libvlc'
+include ':umeng'
+include ':widget'
+include ':base'
+include ':app'
+rootProject.name = "iEndoPlus"

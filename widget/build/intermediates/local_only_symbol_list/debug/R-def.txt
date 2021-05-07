@@ -1,0 +1,44 @@
+R_DEF: Internal format may change without notice
+local
+attr? bar_leftColor
+attr? bar_leftHint
+attr? bar_leftIcon
+attr? bar_leftSize
+attr? bar_leftText
+attr? bar_lineColor
+attr? bar_lineMargin
+attr? bar_lineSize
+attr? bar_lineVisible
+attr? bar_rightColor
+attr? bar_rightHint
+attr? bar_rightIcon
+attr? bar_rightSize
+attr? bar_rightText
+attr? errorColor
+attr? inputRegex
+attr? progressColor
+attr? progressStyle
+attr? regexType
+attr? scaleRatio
+attr? sizeRatio
+attr? succeedColor
+attr? triangle
+drawable input_delete_ic
+drawable password_off_ic
+drawable password_on_ic
+id chinese
+id count
+id english
+id loading
+id mobile
+id name
+id nonnull
+id progress
+styleable CustomViewStub android:layout
+styleable RatioFrameLayout sizeRatio
+styleable RegexEditText inputRegex regexType
+styleable ScaleImageView scaleRatio
+styleable SettingBar bar_leftText bar_leftHint bar_leftIcon bar_leftColor bar_leftSize bar_rightText bar_rightHint bar_rightIcon bar_rightColor bar_rightSize bar_lineVisible bar_lineColor bar_lineSize bar_lineMargin
+styleable SlantedTextView android:text android:textSize android:textColor android:textStyle android:gravity android:colorBackground android:paddingVertical android:paddingHorizontal triangle
+styleable SubmitButton progressColor succeedColor errorColor progressStyle
+styleable SwitchButton android:checked android:enabled
