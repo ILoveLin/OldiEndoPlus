@@ -4,12 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:layoutAnimation="@anim/from_bottom_layout"
     android:orientation="vertical"
-    tools:context=".ui.activity.login.LoginActivity">
+    tools:layoutAnimation="@null">
+    <!--    android:src="@drawable/selector_titlebar_registerleft"-->
 
     <com.hjq.bar.TitleBar
+        android:id="@+id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="登录" />
+        app:title="" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_login_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginVertical="30dp"
+        android:src="@drawable/logo_big_ic" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_login_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.hjq.widget.view.ClearEditText
+            android:id="@+id/et_login_phone"
+            style="@style/EditTextStyle"
+            android:text="Admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/common_phone_input_hint"
+            android:singleLine="true" />
+        <!--        android:inputType="textVisiblePassword"-->
+
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <com.hjq.widget.view.PasswordEditText
+            android:id="@+id/et_login_password"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/common_password_input_error"
+            android:maxLength="20"
+            android:text=""
+            android:maxLines="1" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/niceSpinnerSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            app:arrowTint="@color/colorAccent"
+            app:entries="@array/section"
+            app:textTint="@color/colorAccent" />
+
+        <View
+            style="@style/HorizontalLineStyle"
+            android:layout_marginHorizontal="40dp" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/niceSpinnerGetOnLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            app:arrowTint="@color/colorAccent"
+            app:entries="@array/getOnLine"
+            app:textTint="@color/colorAccent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login_commit"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/login_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_login_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <com.hjq.widget.view.SwitchButton
+            android:id="@+id/sb_setting_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_dialog_tip_finish" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_login_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="0px"
+        android:layout_weight="5" />
+
 
 </LinearLayout>

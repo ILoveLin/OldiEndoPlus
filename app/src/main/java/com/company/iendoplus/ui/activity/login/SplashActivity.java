@@ -12,6 +12,7 @@ import com.company.iendoplus.R;
 import com.company.iendoplus.app.AppActivity;
 import com.company.iendoplus.other.AppConfig;
 import com.company.iendoplus.ui.activity.MainActivity;
+import com.company.iendoplus.utils.SharePreferenceUtil;
 import com.gyf.immersionbar.BarHide;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.widget.view.SlantedTextView;
@@ -23,10 +24,10 @@ import com.hjq.widget.view.SlantedTextView;
  *    desc   : 闪屏界面
  */
 public final class SplashActivity extends AppActivity {
-
     private LottieAnimationView mLottieView;
     private SlantedTextView mDebugView;
-
+    private Boolean isFirstIn;
+    private Boolean isLogin;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_splash;
@@ -36,16 +37,41 @@ public final class SplashActivity extends AppActivity {
     protected void initView() {
         mLottieView = findViewById(R.id.lav_splash_lottie);
         mDebugView = findViewById(R.id.iv_splash_debug);
+        //是否第一次进入app ---------默认是第一次登入  true
+        isFirstIn = (Boolean) SharePreferenceUtil.get(this, SharePreferenceUtil.is_First_in, true);
+        //是否登入-------------------默认是未登录     false
+        isLogin = (Boolean) SharePreferenceUtil.get(this, SharePreferenceUtil.is_login, false);
+
         // 设置动画监听
         mLottieView.addAnimatorListener(new AnimatorListenerAdapter() {
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 mLottieView.removeAnimatorListener(this);
-                MainActivity.start(getContext());
-                finish();
+                WhereGoing();
             }
         });
+    }
+
+    private void WhereGoing() {
+        if (isFirstIn) {
+//            SharePreferenceUtil.put(SplashActivity.this, SharePreferenceUtil.is_First_in, true);
+            Intent intent = new Intent();
+            intent.setClass(SplashActivity.this, GuideActivity.class);
+            startActivity(intent);
+            finish();
+        } else {  //不是第一次进App,判断是否登陆过
+            Intent intent = new Intent();
+            if (!isLogin) {  //登入成功 ,false==未登录
+                intent.setClass(SplashActivity.this, LoginActivity.class);
+            } else {   //已经登陆
+                intent.setClass(SplashActivity.this, MainActivity.class);
+            }
+            startActivity(intent);
+            finish();
+        }
+
+
     }
 
     @Override

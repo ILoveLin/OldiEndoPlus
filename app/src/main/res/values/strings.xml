@@ -2,8 +2,6 @@
     <string name="app_name">iEndoPlus</string>
 
 
-
-
     <!--科室-->
     <string-array name="section">
         <item>耳鼻喉科</item>
@@ -26,11 +24,11 @@
     </string-array>
 
 
+    <!--MineFragment-->
 
+    <string name="mine_exit">退出登录</string>
 
-
-
-
+    <!-- 通用的 -->
     <string name="common_loading">加载中&#8230;</string>
 
     <string name="common_confirm">确定</string>
@@ -43,8 +41,6 @@
     <string name="common_hour">时</string>
     <string name="common_minute">分</string>
     <string name="common_second">秒</string>
-
-    <!-- 通用的 -->
     <string name="common_crash_hint">应用出了点小意外，正在重新启动</string>
 
     <string name="common_network_error">当前网络不可用，请检查网络设置</string>

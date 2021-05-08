@@ -1,5 +1,6 @@
 package com.company.iendoplus.ui.activity.login;
 
+import android.content.Intent;
 import android.view.View;
 
 import androidx.viewpager2.widget.ViewPager2;
@@ -9,14 +10,15 @@ import com.company.iendoplus.aop.SingleClick;
 import com.company.iendoplus.app.AppActivity;
 import com.company.iendoplus.ui.activity.MainActivity;
 import com.company.iendoplus.ui.adapter.GuideAdapter;
+import com.company.iendoplus.utils.SharePreferenceUtil;
 
 import me.relex.circleindicator.CircleIndicator3;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/AndroidProject
- *    time   : 2019/09/21
- *    desc   : 应用引导页
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/AndroidProject
+ * time   : 2019/09/21
+ * desc   : 应用引导页
  */
 public final class GuideActivity extends AppActivity {
 
@@ -25,6 +27,7 @@ public final class GuideActivity extends AppActivity {
     private View mCompleteView;
 
     private GuideAdapter mAdapter;
+    private Boolean is_login;
 
     @Override
     protected int getLayoutId() {
@@ -36,6 +39,8 @@ public final class GuideActivity extends AppActivity {
         mViewPager = findViewById(R.id.vp_guide_pager);
         mIndicatorView = findViewById(R.id.cv_guide_indicator);
         mCompleteView = findViewById(R.id.btn_guide_complete);
+        is_login = (Boolean) SharePreferenceUtil.get(this, SharePreferenceUtil.is_login, false);
+
         setOnClickListener(mCompleteView);
     }
 
@@ -54,9 +59,22 @@ public final class GuideActivity extends AppActivity {
     @Override
     public void onClick(View view) {
         if (view == mCompleteView) {
-            MainActivity.start(getContext());
-            finish();
+            WhereGoing();
         }
+    }
+
+    private void WhereGoing() {
+        if (!is_login) {  //未登入,跳转登入界面
+            Intent intent = new Intent();
+            intent.setClass(GuideActivity.this, LoginActivity.class);
+            startActivity(intent);
+//            SharePreferenceUtil.put(GuideActivity.this, SharePreferenceUtil.is_First_in, false);
+        } else {
+            SharePreferenceUtil.put(GuideActivity.this, SharePreferenceUtil.is_First_in, false);   //false 不是第一次登入了
+//            SharePreferenceUtil.put(GuideActivity.this, SharePreferenceUtil.is_login, false);
+            startActivity(new Intent(GuideActivity.this, MainActivity.class));
+        }
+        finish();
     }
 
     @Override

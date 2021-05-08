@@ -19,14 +19,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_02"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="02"
-        android:textColor="@color/black"
-        android:textSize="25dp" />
+        <com.hjq.widget.layout.SettingBar
+            android:id="@+id/sb_mine_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:bar_leftColor="@color/red"
+            app:bar_leftText="@string/mine_exit"
+            app:bar_rightIcon="@drawable/arrows_right_ic"
+            tools:bar_rightText="" />
+
+        <TextView
+            android:id="@+id/tv_02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="02"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
     </com.company.iendoplus.widget.StatusLayout>
 
 
