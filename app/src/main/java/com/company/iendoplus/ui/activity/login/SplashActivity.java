@@ -42,6 +42,7 @@ public final class SplashActivity extends AppActivity {
         //是否登入-------------------默认是未登录     false
         isLogin = (Boolean) SharePreferenceUtil.get(this, SharePreferenceUtil.is_login, false);
 
+
         // 设置动画监听
         mLottieView.addAnimatorListener(new AnimatorListenerAdapter() {
 

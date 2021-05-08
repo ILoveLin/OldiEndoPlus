@@ -18,6 +18,7 @@ import com.company.iendoplus.app.AppFragment;
 import com.company.iendoplus.manager.ActivityManager;
 import com.company.iendoplus.other.DoubleClickHelper;
 import com.company.iendoplus.other.IntentKey;
+import com.company.iendoplus.ui.activity.vlc.VlcLiveActivity;
 import com.company.iendoplus.ui.fragment.MineFragment;
 import com.company.iendoplus.ui.fragment.Fragment01;
 import com.company.iendoplus.ui.fragment.CaseReportFragment;
@@ -25,6 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hjq.base.FragmentPagerAdapter;
 import com.hjq.toast.ToastUtils;
 import com.hjq.xtoast.XToast;
+import com.hjq.xtoast.draggable.MovingDraggable;
 import com.hjq.xtoast.draggable.SpringDraggable;
 
 
@@ -86,12 +88,11 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
         postDelayed(new Runnable() {
             @Override
             public void run() {
-                    getGlobalToastBall();
+                getGlobalToastBall();
             }
         }, 300);
 
     }
-
 
 
     @Override
@@ -187,7 +188,8 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
 
                     @Override
                     public void onClick(XToast<?> toast, ImageView view) {
-                        ToastUtils.show("Are you ok? 确定观看直播吗？");
+                        ToastUtils.show("Are you ok? 确定观看？");
+                        startActivity(VlcLiveActivity.class);
                         // 点击后跳转到拨打电话界面
                         // Intent intent = new Intent(Intent.ACTION_DIAL);
                         // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -197,7 +199,5 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
                     }
                 })
                 .show();
-
-
     }
 }

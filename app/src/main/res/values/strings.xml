@@ -269,6 +269,7 @@
     <string name="video_select_max_hint">本次最多只能选择 %d 个视频</string>
 
     <string name="video_select_error">无法选中，该视频已经被删除</string>
+    <string name="video_error_play">视频读取错误，请检查网络或退出后重试！</string>
 
     <!-- 拍照 -->
     <string name="camera_launch_fail">无法启动相机</string>

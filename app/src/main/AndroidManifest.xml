@@ -126,6 +126,15 @@
             android:name=".ui.activity.login.CameraActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+
+        <!-- vlc直播界面 -->
+
+        <activity
+            android:name=".ui.activity.vlc.VlcLiveActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullScreenTheme" />
+
         <!-- 播放视频 -->
         <activity
             android:name=".ui.activity.login.VideoPlayActivity"

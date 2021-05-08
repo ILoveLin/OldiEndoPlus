@@ -1,6 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:id="@android:id/icon"-->
+<!--    android:layout_width="60dp"-->
+<!--    android:layout_height="60dp"-->
+<!--    android:src="@mipmap/ic_float_bg" />-->
+
+<com.airbnb.lottie.LottieAnimationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@android:id/icon"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:src="@mipmap/ic_float_bg" />
+    android:layout_width="@dimen/padding_76"
+    android:layout_height="@dimen/padding_76"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    app:lottie_rawRes="@raw/live_icon_01_green" />
