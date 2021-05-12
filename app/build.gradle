@@ -84,8 +84,6 @@ dependencies {
     implementation project(':base')
     // 控件封装
     implementation project(':widget')
-    // 友盟封装
-    implementation project(':umeng')
     //VLC
     implementation project(':libvlc')
     //SMB协议
