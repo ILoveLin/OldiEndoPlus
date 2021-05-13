@@ -11,20 +11,26 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
 
+
 import com.company.iendoplus.R;
 import com.company.iendoplus.app.AppActivity;
 import com.company.iendoplus.app.AppFragment;
 import com.company.iendoplus.manager.ActivityManager;
 import com.company.iendoplus.other.DoubleClickHelper;
 import com.company.iendoplus.other.IntentKey;
+import com.company.iendoplus.ui.activity.login.LoginActivity;
 import com.company.iendoplus.ui.activity.vlc.VlcLiveActivity;
-import com.company.iendoplus.ui.fragment.CaseReportFragment;
-import com.company.iendoplus.ui.fragment.Fragment01;
+import com.company.iendoplus.ui.dialog.MessageDialog;
 import com.company.iendoplus.ui.fragment.MineFragment;
+import com.company.iendoplus.ui.fragment.Fragment01;
+import com.company.iendoplus.ui.fragment.CaseReportFragment;
+import com.company.iendoplus.utils.SharePreferenceUtil;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.hjq.base.BaseDialog;
 import com.hjq.base.FragmentPagerAdapter;
 import com.hjq.toast.ToastUtils;
 import com.hjq.xtoast.XToast;
+import com.hjq.xtoast.draggable.MovingDraggable;
 import com.hjq.xtoast.draggable.SpringDraggable;
 
 
@@ -186,8 +192,7 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
 
                     @Override
                     public void onClick(XToast<?> toast, ImageView view) {
-                        ToastUtils.show("Are you ok? 确定观看？");
-                        startActivity(VlcLiveActivity.class);
+                        goingVlvLive();
                         // 点击后跳转到拨打电话界面
                         // Intent intent = new Intent(Intent.ACTION_DIAL);
                         // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -198,4 +203,34 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
                 })
                 .show();
     }
+
+    private void goingVlvLive() {
+        // 消息对话框
+        new MessageDialog.Builder(getActivity())
+                // 标题可以不用填写
+                .setTitle("提示!")
+                // 内容必须要填写
+                .setMessage("Are you ok, 确定观看视频直播?")
+                .setCanceledOnTouchOutside(false)
+                // 确定按钮文本
+                .setConfirm(getString(R.string.common_confirm))
+                // 设置 null 表示不显示取消按钮
+                .setCancel(getString(R.string.common_cancel))
+                // 设置点击按钮后不关闭对话框
+                //.setAutoDismiss(false)
+                .setListener(new MessageDialog.OnListener() {
+
+                    @Override
+                    public void onConfirm(BaseDialog dialog) {
+                        startActivity(VlcLiveActivity.class);
+                    }
+
+                    @Override
+                    public void onCancel(BaseDialog dialog) {
+                    }
+                })
+                .show();
+    }
+
+
 }

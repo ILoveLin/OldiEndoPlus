@@ -53,7 +53,6 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
         mAdapter = new StatusAdapter(getAttachActivity());
         mAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapter(mAdapter);
-
         TextView headerView = mRecyclerView.addHeaderView(R.layout.picker_item);
         headerView.setText("我是头部");
         headerView.setOnClickListener(v -> toast("点击了头部"));
