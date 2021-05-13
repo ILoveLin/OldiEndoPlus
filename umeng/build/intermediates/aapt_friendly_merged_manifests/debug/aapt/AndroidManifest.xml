@@ -35,7 +35,7 @@
         <!-- 友盟 Key（请在 Gradle 中配置，请不要在此处修改） -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="5cb16d93570df399fd0014e2" />
+            android:value="609c9271c9aacd3bd4d2c2c2" />
 
         <!-- QQ AppId（请在 Gradle 中配置，请不要在此处修改） -->
         <meta-data

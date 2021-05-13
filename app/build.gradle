@@ -30,7 +30,7 @@ android {
             // 日志打印开关
             buildConfigField('boolean', 'LOG_ENABLE', 'true')
             // 测试包下的 BuglyId
-            buildConfigField('String', 'BUGLY_ID', '"请自行替换 Bugly 上面的 AppID"')
+            buildConfigField('String', 'BUGLY_ID', '"dee131f4af"')  //请自行替换 Bugly 上面的 AppID
             // 测试服务器的主机地址
             buildConfigField('String', 'HOST_URL', '"https://www.test.baidu.com/"')
             // 设置清单占位符
@@ -63,7 +63,7 @@ android {
             // 日志打印开关
             buildConfigField('boolean', 'LOG_ENABLE', 'false')
             // 正式包下的 BuglyId
-            buildConfigField('String', 'BUGLY_ID', '"请自行替换 Bugly 上面的 AppID"')
+            buildConfigField('String', 'BUGLY_ID', '"dee131f4af"')//请自行替换 Bugly 上面的 AppID
             // 正式服务器的主机地址
             buildConfigField('String', 'HOST_URL', '"https://www.baidu.com/"')
             // 设置清单占位符
@@ -137,7 +137,9 @@ dependencies {
 
     // 刷新框架：https://github.com/scwang90/SmartRefreshLayout
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
-    implementation 'com.scwang.smart:refresh-header-material:2.0.3'
+//    implementation 'com.scwang.smart:refresh-header-material:2.0.3'
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    implementation  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
 
     // 日志打印框架：https://github.com/JakeWharton/timber
     implementation 'com.jakewharton.timber:timber:4.7.1'

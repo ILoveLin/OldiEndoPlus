@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.company.iendoplus.R;
@@ -15,12 +16,17 @@ import com.company.iendoplus.ui.adapter.StatusAdapter;
 import com.company.iendoplus.widget.StatusLayout;
 import com.hjq.base.BaseAdapter;
 import com.hjq.widget.layout.WrapRecyclerView;
+import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.constant.SpinnerStyle;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *    author : Android 轮子哥
@@ -43,6 +49,7 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
     protected int getLayoutId() {
         return R.layout.fragment_case;
     }
+    private ClassicsHeader mClassicsHeader;
 
     @Override
     protected void initView() {
@@ -53,6 +60,11 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
         mAdapter = new StatusAdapter(getAttachActivity());
         mAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapter(mAdapter);
+
+        mClassicsHeader = (ClassicsHeader)mRefreshLayout.getRefreshHeader();
+//        mClassicsHeader.setSpinnerStyle(SpinnerStyle.values[1]);//尺寸拉伸
+        mClassicsHeader.setSpinnerStyle(SpinnerStyle.Translate);//位置平移
+        mClassicsHeader.setSpinnerStyle(SpinnerStyle.Translate);
         TextView headerView = mRecyclerView.addHeaderView(R.layout.picker_item);
         headerView.setText("我是头部");
         headerView.setOnClickListener(v -> toast("点击了头部"));
@@ -74,7 +86,7 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
      */
     private List<String> analogData() {
         List<String> data = new ArrayList<>();
-        for (int i = mAdapter.getItemCount(); i < mAdapter.getItemCount() + 50; i++) {
+        for (int i = mAdapter.getItemCount(); i < mAdapter.getItemCount() + 20; i++) {
             data.add("我是第" + i + "条目");
         }
         return data;

@@ -27,6 +27,8 @@
     <!--MineFragment-->
 
     <string name="mine_exit">退出登录</string>
+    <string name="mine_test">测试一下--异常</string>
+    <string name="mine_share">测试一下--分享</string>
 
     <!-- 通用的 -->
     <string name="common_loading">加载中&#8230;</string>

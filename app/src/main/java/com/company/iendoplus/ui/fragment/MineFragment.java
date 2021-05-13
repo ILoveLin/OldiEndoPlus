@@ -11,10 +11,16 @@ import com.company.iendoplus.manager.ActivityManager;
 import com.company.iendoplus.ui.activity.MainActivity;
 import com.company.iendoplus.ui.activity.login.LoginActivity;
 import com.company.iendoplus.ui.dialog.MessageDialog;
+import com.company.iendoplus.ui.dialog.ShareDialog;
 import com.company.iendoplus.utils.SharePreferenceUtil;
 import com.company.iendoplus.widget.StatusLayout;
 import com.hjq.base.BaseDialog;
+import com.hjq.demo.wxapi.WXEntryActivity;
+import com.hjq.umeng.Platform;
+import com.hjq.umeng.UmengShare;
 import com.hjq.widget.layout.SettingBar;
+
+import java.util.ArrayList;
 
 /**
  * author : Android 轮子哥
@@ -38,6 +44,7 @@ public final class MineFragment extends TitleBarFragment<MainActivity> implement
     protected void initView() {
         mStatusLayout = findViewById(R.id.fragment_case_report_status);
         findViewById(R.id.sb_mine_exit).setOnClickListener(this);
+
     }
 
     @Override

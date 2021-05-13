@@ -56,7 +56,7 @@
 36        <meta-data
 37            android:name="UMENG_APPKEY"
 37-->C:\Users\Administrator\Desktop\CurrentProject\iEndoPlus\umeng\src\main\AndroidManifest.xml:21:13-40
-38            android:value="5cb16d93570df399fd0014e2" />
+38            android:value="609c9271c9aacd3bd4d2c2c2" />
 38-->C:\Users\Administrator\Desktop\CurrentProject\iEndoPlus\umeng\src\main\AndroidManifest.xml:22:13-44
 39
 40        <!-- QQ AppId（请在 Gradle 中配置，请不要在此处修改） -->
