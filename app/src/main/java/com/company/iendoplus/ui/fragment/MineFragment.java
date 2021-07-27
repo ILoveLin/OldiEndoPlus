@@ -43,7 +43,7 @@ public final class MineFragment extends TitleBarFragment<MainActivity> implement
     @Override
     protected void initView() {
         mStatusLayout = findViewById(R.id.fragment_case_report_status);
-        findViewById(R.id.sb_mine_exit).setOnClickListener(this);
+        setOnClickListener(R.id.sb_mine_exit);
 
     }
 
@@ -59,7 +59,6 @@ public final class MineFragment extends TitleBarFragment<MainActivity> implement
         switch (view.getId()) {
             case R.id.sb_mine_exit:
                 showExitDialog();
-
                 break;
         }
     }

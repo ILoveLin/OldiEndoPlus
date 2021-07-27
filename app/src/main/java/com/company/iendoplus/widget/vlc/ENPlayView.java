@@ -1,4 +1,4 @@
-package com.company.iendoplus.widget;
+package com.company.iendoplus.widget.vlc;
 
 
 import android.animation.ValueAnimator;

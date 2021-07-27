@@ -40,6 +40,8 @@ android {
         preview {}
         // 正式版本
         release {}
+
+
     }
 }
 

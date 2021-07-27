@@ -167,7 +167,7 @@
             android:textColor="@android:color/white"
             android:textSize="17sp" />
 
-        <com.company.iendoplus.widget.ENDownloadView
+        <com.company.iendoplus.widget.vlc.ENDownloadView
             android:id="@+id/loading"
             android:layout_width="@dimen/padding_28"
             android:layout_height="@dimen/padding_28"
@@ -175,7 +175,7 @@
             android:layout_centerVertical="true"
             android:visibility="invisible" />
 
-        <com.company.iendoplus.widget.ENPlayView
+        <com.company.iendoplus.widget.vlc.ENPlayView
             android:id="@+id/start"
             android:layout_width="@dimen/padding_60"
             android:layout_height="@dimen/padding_60"

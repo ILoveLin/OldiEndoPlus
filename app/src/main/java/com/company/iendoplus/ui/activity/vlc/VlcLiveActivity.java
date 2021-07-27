@@ -13,14 +13,12 @@ import androidx.annotation.NonNull;
 
 import com.company.iendoplus.R;
 import com.company.iendoplus.app.AppActivity;
-import com.company.iendoplus.widget.ENDownloadView;
-import com.company.iendoplus.widget.ENPlayView;
+import com.company.iendoplus.widget.vlc.ENDownloadView;
+import com.company.iendoplus.widget.vlc.ENPlayView;
 import com.company.iendoplus.widget.vlc.MyVlcVideoView;
-import com.hjq.base.BaseDialog;
 import com.vlc.lib.VlcVideoView;
 
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * author : Android 轮子哥

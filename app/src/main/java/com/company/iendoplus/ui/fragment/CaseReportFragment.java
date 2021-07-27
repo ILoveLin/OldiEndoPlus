@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.company.iendoplus.R;
@@ -21,6 +22,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.constant.SpinnerStyle;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
     private WrapRecyclerView mRecyclerView;
     private StatusAdapter mAdapter;
     private StatusLayout mStatusLayout;
+    private LinearLayoutManager mLinearLayoutManager;
 
     public static CaseReportFragment newInstance() {
         return new CaseReportFragment();
@@ -57,6 +60,7 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
         mRefreshLayout = findViewById(R.id.rl_status_refresh);
         mRecyclerView = findViewById(R.id.rv_status_list);
 
+
         mAdapter = new StatusAdapter(getAttachActivity());
         mAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapter(mAdapter);
@@ -65,6 +69,10 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
 //        mClassicsHeader.setSpinnerStyle(SpinnerStyle.values[1]);//尺寸拉伸
         mClassicsHeader.setSpinnerStyle(SpinnerStyle.Translate);//位置平移
         mClassicsHeader.setSpinnerStyle(SpinnerStyle.Translate);
+
+
+        mLinearLayoutManager = new LinearLayoutManager(getAttachActivity());
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
         TextView headerView = mRecyclerView.addHeaderView(R.layout.picker_item);
         headerView.setText("我是头部");
         headerView.setOnClickListener(v -> toast("点击了头部"));
@@ -74,6 +82,9 @@ public final class CaseReportFragment extends TitleBarFragment<MainActivity> imp
         footerView.setOnClickListener(v -> toast("点击了尾部"));
 
         mRefreshLayout.setOnRefreshLoadMoreListener(this);
+
+
+
     }
 
     @Override
