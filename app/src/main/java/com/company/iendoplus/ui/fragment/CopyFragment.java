@@ -25,6 +25,7 @@ public final class CopyFragment extends AppFragment<CopyActivity> {
     @Override
     protected void initView() {
 
+        
     }
 
     @Override
