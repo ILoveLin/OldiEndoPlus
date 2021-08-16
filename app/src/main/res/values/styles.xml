@@ -87,7 +87,10 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/common_line_color</item>
     </style>
-
+    <!-- 默认垂直分割线样式 -->
+    <style name="MessageDialogStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
     <!-- 验证码按钮样式 -->
     <style name="CountdownViewStyle">
         <item name="android:layout_width">wrap_content</item>
@@ -108,7 +111,8 @@
 
     <!-- 底部导航栏字体样式 -->
     <style name="BottomTabTextStyle" >
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+<!--        <item name="android:drawablePadding">@dimen/dp_5</item>-->
     </style>
 
 </resources>

@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:backButton="false"
-        app:title="@string/main_nav_me" />
+        app:title="@string/main_nav_me"
+        app:titleSize="@dimen/sp_20" />
 
 
     <com.company.iendoplus.widget.StatusLayout
@@ -23,9 +24,10 @@
             android:id="@+id/sb_mine_exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/dp_15"
             app:bar_leftColor="@color/red"
             app:bar_leftText="@string/mine_exit"
+            app:bar_leftSize="@dimen/sp_18"
             app:bar_rightIcon="@drawable/arrows_right_ic"
             tools:bar_rightText="" />
 
@@ -36,7 +38,7 @@
             android:gravity="center"
             android:text="02"
             android:textColor="@color/black"
-            android:textSize="25dp" />
+            android:textSize="@dimen/sp_28" />
     </com.company.iendoplus.widget.StatusLayout>
 
 

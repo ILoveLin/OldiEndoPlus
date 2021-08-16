@@ -7,8 +7,8 @@
 <com.airbnb.lottie.LottieAnimationView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@android:id/icon"
-    android:layout_width="@dimen/padding_76"
-    android:layout_height="@dimen/padding_76"
+    android:layout_width="@dimen/dp_76"
+    android:layout_height="@dimen/dp_76"
     app:lottie_autoPlay="true"
     app:lottie_loop="true"
     app:lottie_rawRes="@raw/live_icon_01_green" />

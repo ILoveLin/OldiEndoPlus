@@ -3,8 +3,10 @@ package com.company.iendoplus.ui.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
@@ -185,7 +187,7 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
         xToastXToast = new XToast<>(MainActivity.this);  //getApplication()  所有App界面显示需要权限，activity就是当前界面显示
         xToastXToast.setView(R.layout.toast_phone)
                 .setGravity(Gravity.END | Gravity.BOTTOM)
-                .setYOffset(200)
+                .setYOffset(20)
                 // 设置指定的拖拽规则
                 .setDraggable(new SpringDraggable())
                 .setOnClickListener(android.R.id.icon, new XToast.OnClickListener<ImageView>() {
@@ -231,6 +233,7 @@ public final class MainActivity extends AppActivity implements BottomNavigationV
                 })
                 .show();
     }
+
 
 
 }

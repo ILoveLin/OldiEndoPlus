@@ -42,7 +42,7 @@
             android:scaleType="centerInside"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="@dimen/padding_13" />
+            android:textSize="@dimen/dp_13" />
     </LinearLayout>
 
 </RelativeLayout>
