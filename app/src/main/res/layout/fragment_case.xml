@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         app:backButton="false"
         app:titleSize="@dimen/sp_20"
-
         app:title="@string/main_nav_case" />
 
     <com.company.iendoplus.widget.StatusLayout

@@ -112,7 +112,7 @@
     <!-- 底部导航栏字体样式 -->
     <style name="BottomTabTextStyle" >
         <item name="android:textSize">@dimen/sp_12</item>
-<!--        <item name="android:drawablePadding">@dimen/dp_5</item>-->
+        <!--        <item name="android:drawablePadding">@dimen/dp_5</item>-->
     </style>
 
 </resources>
